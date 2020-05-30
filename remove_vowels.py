@@ -9,16 +9,12 @@
 
 class Solution:
     def removeVowels(self, S: str) -> str:
-        s_list = list(S)
-        if 1 <= len(s_list) <= 1000:
-            for c in s_list:
-                if c == 'a' or c == 'e' or c == "i" or c == 'o' or c == 'u':
-                    s_list.remove(c)
-                output = "".join(s_list)
-                return output
+        vowels = ['a', 'e', 'i', 'o', 'u']
+        if 1 <= len(S) <= 1000:
+            return ''.join([v for v in S if v not in vowels])
         else:
             print("String not in bounds.")
-
+            return
 
 
 S = "leetcodeisacommunityforcoders"
