@@ -34,29 +34,27 @@
 # 1 <= s.length <= 10^5
 # s.length is a multiple of 4
 # s contains only 'Q', 'W', 'E' and 'R'.
+#
+# Source - https://leetcode.com/problems/replace-the-substring-for-balanced-string/
+
+from collections import Counter
+from collections import defaultdict
 
 class Solution:
-    def balancedString(self, input):
-        substring = ['Q', 'W', 'E', 'R']
-        ctr = 0
-        input_list = list(input)
-        input_len = len(input)
-        balanced_count = input_len / 4.0
-        for i in substring:
-            print(f"Checking {i}")
-            if i in input_list:
-                times = input.count(i)
-                if times < balanced_count:
-                    ctr = ctr + (balanced_count - times)
-                    print(f"Make {i} balanced and add {(balanced_count - times)}")
+    def balancedString(self, s: str) -> int:
+        is_balanced = len(s) // 4
+        extra = Counter(s) - Counter({a: is_balanced for a in 'QWER'})
+        if not extra:
+            return 0
 
-                else:
-                    print(f"{i} is extra")
-            else:
-                print(f"{i} doesnt exist")
-                ctr += balanced_count
-        return int(ctr)
-
+        ans = len(s)
+        indices = defaultdict(list)
+        for i, a in enumerate(s):
+            indices[a].append(i)
+            if any(len(indices[k]) < v for k, v in extra.items()):
+                continue
+            ans = min(ans, i - min(indices[k][-v] for k, v in extra.items()) + 1)
+        return ans
 
 s = Solution()
 output = s.balancedString("WWEQERQWQWWRWWERQWEQ")
