@@ -7,14 +7,11 @@
 #
 # Source: https://leetcode.com/problems/defanging-an-ip-address/
 
+import re
+
 class Solution:
     def defangIPaddr(self, address):
-        add_list = list(address)
-        for i, value in enumerate(add_list):
-            if value == ".":
-                add_list[i] = "[.]"
-        return "".join(add_list)
-        # return ''.join('[.]' if c == '.' else c for c in address)
+        return re.sub('[.]', '[.]', address)
 
 
 s = Solution()
