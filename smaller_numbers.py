@@ -7,5 +7,25 @@
 # Output: [2,1,0,3]
 
 class Solution:
-    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-    // TODO
+    def smallerNumbersThanCurrent(self, nums):
+        dct = {}
+        for i, n in enumerate(sorted(nums)):
+            if n not in dct:
+                dct[n] = i
+        return [dct[n] for n in nums]
+
+
+# class Solution:
+#     def smallerNumbersThanCurrent(self, num):
+#         output = []
+#         for i in num:
+#             c = 0
+#             for j in num:
+#                 if j < i:
+#                     c = c + 1
+#             output.append(c)
+#         return output
+
+s = Solution()
+z = s.smallerNumbersThanCurrent([8,1,2,2,3])
+print(z)
