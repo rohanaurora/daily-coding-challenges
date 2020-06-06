@@ -12,8 +12,17 @@
 
 class Solution:
     def numJewelsInStones(self, J, S):
-        res = map(S.count, J)
-        return sum(res)
+        j = set(J)
+        count = 0
+        for i in S:
+            count += 1 if i in j else 0
+        return count
+
+        # Solution 2
+        # res = map(S.count, J)
+        # return sum(res)
+
+        # Solution 3
         # return sum(s in J for s in S)
 
 s = Solution().numJewelsInStones("aA", "aAAbbbb")
