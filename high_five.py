@@ -10,6 +10,8 @@
 # Explanation:
 # The average of the student with id = 1 is 87.
 # The average of the student with id = 2 is 88.6. But with integer division their average converts to 88.
+#
+# Source - https://leetcode.com/problems/high-five/
 
 class Solution:
     def highFive(self, items):
