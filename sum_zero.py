@@ -8,15 +8,22 @@
 
 import random
 
+
 class Solution:
     def sumZero(self, n):
         res = []
 
-        while len(res) <= n:
-            a = random.randint(-10, 10)
-            res.append(a)
-        while sum(res) == 0
+        if n % 2 != 0:
+            res.append(0)
+
+        digits = n // 2
+        for i in range(1, digits + 1):
+            res.append(i)
+            res.append(-1 * i)
+
         return res
+
 
 s = Solution().sumZero(5)
 print(s)
+print(sum(s))
