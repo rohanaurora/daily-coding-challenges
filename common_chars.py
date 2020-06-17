@@ -7,11 +7,11 @@
 
 class Solution:
     def commonChars(self, A):
-        main = list(A[0])
-        A = list(map(list, A))
+        first = list(A[0])
+        A = list(map(list, A))  #[['b', 'e', 'l', 'l', 'a'], ['l', 'a', 'b', 'e', 'l'], ['r', 'o', 'l', 'l', 'e', 'r']]
         res = []
-        for c in main:
-            for i in range(1, len(A)):
+        for c in first:     # 'b', 'e', 'l', 'l', 'a'
+            for i in range(1, len(A)):  # from 2nd element to last
                 s = A[i]
                 if c not in s:
                     break
