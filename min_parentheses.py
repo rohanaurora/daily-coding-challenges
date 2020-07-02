@@ -35,3 +35,26 @@ class Solution:
 i = "(a(b(c)d)"
 s = Solution().minRemoveToMakeValid(i)
 print(s)
+
+# Using a Stack and String Builder
+
+# class Solution:
+#     def minRemoveToMakeValid(self, s: str) -> str:
+#         index = set()
+#         stack = []
+#         res = []
+#         for i, j in enumerate(s):
+#             if j not in "()":
+#                 continue
+#             if j == "(":
+#                 stack.append(i)
+#             elif not stack:
+#                 index.add(i)
+#             else:
+#                 stack.pop()
+#         index = index.union(set(stack))
+#
+#         for x, y in enumerate(s):
+#             if x not in index:
+#                 res.append(y)
+#         return "".join(res)
