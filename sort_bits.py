@@ -4,7 +4,6 @@
 #
 # Return the sorted array.
 
-from collections import Counter
 # class Solution:
 #     def sortByBits(self, arr):
 #         res = sorted(arr, key=lambda x: (bin(x).count('1'), x))
@@ -12,17 +11,18 @@ from collections import Counter
 
 class Solution:
     def sortByBits(self, arr):
-        return sorted(arr, key=lambda x: (self.hamming_weight(x), x))
+        res = sorted(arr, key=lambda x: (self.hamming_weight(x), x))
+        return res
 
     @staticmethod
-    # bitwise AND rightmost bit & right shift to check the next bit
-    def hamming_weight(num: int) -> int:
-        weight = 0
+    def hamming_weight(n: int) -> int:
+        c = 0
+        while n:
+            c += 1      # c += n & 1
+            n &= n - 1  # n >>= 1
+            print(n)
+        return c
 
-        while num:
-            weight += num & 1
-            num = num >> 1
-        return weight
 
 s = Solution().sortByBits([0,1,2,3,4,5,6,7,8])
 print(s)
