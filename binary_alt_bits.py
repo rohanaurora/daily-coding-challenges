@@ -8,7 +8,6 @@
 # Explanation:
 # The binary representation of 5 is: 101
 
-import re
 class Solution:
     def hasAlternatingBits(self, n: int) -> bool:
         x = str(bin(n)[2:])
@@ -20,4 +19,5 @@ class Solution:
 s = Solution().hasAlternatingBits(4)
 print(s)
 
-# More solutions = https://leetcode.com/problems/binary-number-with-alternating-bits/discuss/657141/3-ways-From-naive-to-more-fine-tuned-solutions
+# More solutions
+# https://leetcode.com/problems/binary-number-with-alternating-bits/discuss/657141/3-ways-From-naive-to-more-fine-tuned-solutions
