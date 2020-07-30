@@ -29,3 +29,8 @@ class Solution:
 
 s = Solution().sortByBits([0,1,2,3,4,5,6,7,8])
 print(s)
+
+# class Solution:
+#     def sortByBits(self, arr: List[int]) -> List[int]:
+#         arr.sort()
+#         return(sorted(arr,key = lambda x: bin(x)[2:].count("1")))
