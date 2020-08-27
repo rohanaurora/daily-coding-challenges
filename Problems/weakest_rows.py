@@ -1,4 +1,6 @@
-class Solution:
+# The K Weakest Rows in a Matrix
+# Source - https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/
+ class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
         sam = []
 
