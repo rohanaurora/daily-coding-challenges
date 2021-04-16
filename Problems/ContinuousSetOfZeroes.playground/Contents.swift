@@ -1,7 +1,10 @@
 
 import Foundation
 
-// Return true if there are more than 1 set of continuous zeroes.
+// Implement a function that takes an array that contains any number of 1s and 0s, and returns true if there is exactly one continuous set of zeros.
+
+// For example [0,0,1,1] should return true, [1,0,0,0,0,1,0] should return false. 4
+
 
 func continuousSetOfZeroes(_ input:[Int]) -> Bool {
     
